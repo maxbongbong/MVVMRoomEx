@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MVVMRoomEx</string>
+    <string name="userId">Id : </string>
+    <string name="userAge">Age : </string>
+    <string name="userName">Name : </string>
+    <string name="userDelete">Delete</string>
+</resources>
