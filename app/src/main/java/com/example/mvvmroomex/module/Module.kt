@@ -1,4 +1,5 @@
 package com.example.mvvmroomex.module
 
-class Module {
+abstract class Module {
+    abstract fun userViewModel()
 }

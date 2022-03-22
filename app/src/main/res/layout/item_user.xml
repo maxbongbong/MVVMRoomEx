@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayoutCompat"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,15 +9,12 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:layout_weight="1"
-        android:orientation="vertical"
         android:gravity="center_vertical|center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayoutCompat3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -27,11 +22,11 @@
             android:id="@+id/tvUserId"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="start|center_vertical"
-            android:hint="@string/userId"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:hint="@string/Id"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -39,11 +34,11 @@
             android:id="@+id/tvUserName"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="start|center_vertical"
-            android:hint="@string/userName"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:hint="@string/Name"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -51,27 +46,44 @@
             android:id="@+id/tvUserAge"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:layout_weight="1"
             android:gravity="start|center_vertical"
-            android:hint="@string/userAge"
+            android:hint="@string/Age"
             android:textColor="@color/black"
             android:textSize="20sp" />
-
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <Button
-        android:id="@+id/btnDelete"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginEnd="10dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
         android:gravity="center|center_vertical"
-        android:text="@string/userDelete"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnRevise"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center|center_vertical"
+            android:text="@string/Revise1"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center|center_vertical"
+            android:text="@string/Delete"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

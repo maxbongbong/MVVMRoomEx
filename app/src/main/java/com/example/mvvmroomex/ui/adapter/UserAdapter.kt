@@ -10,7 +10,7 @@ import com.example.mvvmroomex.model.User
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_user.view.*
 
-class UserAdapter(val context: Context?, val list: ArrayList<User>) :
+class UserAdapter(private val context: Context?, private val list: ArrayList<User>) :
     RecyclerView.Adapter<UserAdapter.CustomViewHolder>() {
 
     interface SelectItem {
@@ -22,14 +22,14 @@ class UserAdapter(val context: Context?, val list: ArrayList<User>) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): UserAdapter.CustomViewHolder {
+    ): CustomViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_user, parent, false)
         return CustomViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: UserAdapter.CustomViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         if (list.size > position) {
-            holder.bindView(context, position, selectItem, list[position], list.size)
+            holder.bindView(context, position, selectItem, list[position])
         }
     }
 
@@ -44,8 +44,7 @@ class UserAdapter(val context: Context?, val list: ArrayList<User>) :
             context: Context?,
             position: Int,
             selectItem: SelectItem?,
-            user: User,
-            size: Int
+            user: User
         ) {
 
             with(itemView) {
@@ -60,6 +59,12 @@ class UserAdapter(val context: Context?, val list: ArrayList<User>) :
                     val age = user.age.toString()
                     tvUserAge.text = age
 
+                    btnRevise.tag = position
+                    btnRevise.setOnClickListener {
+                        val pos = it.tag.toString().toInt()
+                        selectItem?.selectItem(pos, "revise")
+                    }
+
                     btnDelete.tag = position
                     btnDelete.setOnClickListener {
                         val pos = it.tag.toString().toInt()
@@ -67,7 +72,6 @@ class UserAdapter(val context: Context?, val list: ArrayList<User>) :
                     }
                 }
             }
-
         }
     }
 }

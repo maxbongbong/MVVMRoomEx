@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/LBH/2022/MVVMRoomEx/app/src/main/res/layout/activity_main.xml" value="0.14" />
+        <entry key="..\:/LBH/2022/MVVMRoomEx/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/LBH/2022/MVVMRoomEx/app/src/main/res/layout/dialog_user.xml" value="0.19" />
         <entry key="..\:/LBH/2022/MVVMRoomEx/app/src/main/res/layout/item_user.xml" value="0.25" />
       </map>
     </option>

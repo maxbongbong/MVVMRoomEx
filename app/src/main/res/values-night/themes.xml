@@ -13,4 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.MVVMRoomEx.Theme_Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
+<!--        <item name="android:windowBackground">@android:color/transparent</item>-->
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
 </resources>

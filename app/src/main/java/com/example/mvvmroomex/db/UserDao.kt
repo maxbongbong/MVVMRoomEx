@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Update
+import androidx.room.Query
 import com.example.mvvmroomex.model.User
 
 @Dao
@@ -23,13 +24,13 @@ interface UserDao {
     @Delete
     suspend fun deleteUser(user : User)
 
-    @androidx.room.Query("SELECT * FROM user_table ORDER BY id ASC")
+    @Query("SELECT * FROM user_table ORDER BY id ASC")
     fun readAllData() : LiveData<List<User>>
 
-    @androidx.room.Query("SELECT * FROM user_table WHERE name LIKE :searchQuery")
+    @Query("SELECT * FROM user_table WHERE name LIKE :searchQuery")
     fun searchDatabase(searchQuery : String) : LiveData<List<User>>
 
-    @androidx.room.Query("DELETE FROM user_table")
+    @Query("DELETE FROM user_table")
     suspend fun deleteAllUser()
 
 }

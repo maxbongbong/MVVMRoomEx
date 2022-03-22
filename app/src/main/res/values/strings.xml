@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">MVVMRoomEx</string>
-    <string name="userId">Id : </string>
-    <string name="userAge">Age : </string>
-    <string name="userName">Name : </string>
-    <string name="userDelete">Delete</string>
+    <string name="Id">Id : </string>
+    <string name="Age">Age : </string>
+    <string name="Name">Name : </string>
+    <string name="Delete">Delete</string>
+    <string name="Add">Add</string>
+    <string name="Revise1">Revise</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Revise2">수정</string>
+
 </resources>

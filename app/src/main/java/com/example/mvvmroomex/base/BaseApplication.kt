@@ -1,12 +1,14 @@
 package com.example.mvvmroomex.base
 
+import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mvvmroomex.ui.activity.MainActivity
 import com.example.mvvmroomex.viewmodel.UserViewModel
-import com.example.mvvmroomex.viewmodel.ViewModel
 import org.koin.android.ext.koin.androidContext
+import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import java.util.ArrayList
@@ -16,7 +18,7 @@ class BaseApplication : Application() {
 
     companion object{
 
-        var activityList: ArrayList<BaseActivity<*, *>> = ArrayList()
+        var activityList: ArrayList<AppCompatActivity> = ArrayList()
 
         @Volatile private var instance: BaseApplication? = null
         @JvmStatic fun getInstance(): BaseApplication =
@@ -28,7 +30,10 @@ class BaseApplication : Application() {
     }
 
     private val appModule = module {
-        factory<ViewModel> { ViewModel.DataModelImpl() }
+//        factory<ViewModel> { ViewModel.DataModelImpl() }
+        viewModel {
+            UserViewModel(getInstance())
+        }
     }
 
     override fun onCreate() {
@@ -66,7 +71,7 @@ class BaseApplication : Application() {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     intent.setClass(context, MainActivity::class.java)
                     context.startActivity(intent)
-                    (context as BaseActivity<*, *>).overridePendingTransition(0, 0)
+                    (context as AppCompatActivity).overridePendingTransition(0, 0)
                 }
 
             } catch (e: java.lang.Exception) {
